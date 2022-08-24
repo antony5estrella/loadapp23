@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TruckLoad</string>
+    <string name="modern">modern</string>
+    <string name="river_rd_to_modern">River RD to Modern</string>
+    <string name="quickwey_to_modern">Quickwey to Modern</string>
+    <string name="river_rd_to_canastoga">River RD to Canastoga</string>
+    <string name="Carcular">Carcular</string>
+    <string name="ingresar_viajes">Ingresar Viajes</string>
+    <string name="viajes_cargas_app">Viajes Cargas App!</string>
+</resources>
