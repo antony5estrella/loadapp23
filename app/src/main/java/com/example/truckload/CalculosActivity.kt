@@ -11,42 +11,57 @@ class CalculosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculos)
         val btnCarcularCal = findViewById<Button>(R.id.button2)
-        btnCarcularCal.setOnClickListener{showValor()}
+        btnCarcularCal.setOnClickListener { checkValue() }
     }
 
-    fun checkValue():Int {
-         val river:String
-         val quickwey:String
-         val canastoga:String
+    fun checkValue() {
 
-        val etNumber = findViewById<EditText>(R.id.editTextNumber)
-        if (etNumber.text.isNotEmpty()){
-            river = etNumber.text.toString()
-        }else{
-            river = "0"
+
+        fun checkValueA(): Int {
+            val etNumber = findViewById<EditText>(R.id.editTextNumber)
+            if (etNumber.text.isNotEmpty()) {
+                return etNumber.text.toString().toInt()
+            } else {
+                return 0
+            }
         }
-        val etNumber2 = findViewById<EditText>(R.id.editTextNumber2)
-        if (etNumber2.text.isNotEmpty()){
-            quickwey = etNumber.text.toString()
-        }else{
-            quickwey = "0"
+
+        fun checkValueB(): Int {
+            val etNumber2 = findViewById<EditText>(R.id.editTextNumber2)
+            if (etNumber2.text.isNotEmpty()) {
+                return etNumber2.text.toString().toInt()
+            } else {
+                return 0
+            }
         }
-        val etNumber3 = findViewById<EditText>(R.id.editTextNumber3)
-        if (etNumber3.text.isNotEmpty()){
-            canastoga = etNumber.text.toString()
-        }else{
-            canastoga = "0"
+
+        fun checkValueC(): Int {
+            val etNumber3 = findViewById<EditText>(R.id.editTextNumber3)
+            if (etNumber3.text.isNotEmpty()) {
+                return etNumber3.text.toString().toInt()
+            } else {
+                return 0
+            }
         }
-        val valor = carcularViajes(river.toInt(),quickwey.toInt(),canastoga.toInt())
-        return valor
+
+        val a = checkValueA()
+        val b = checkValueB()
+        val c = checkValueC()
+
+        fun carcularViajes(a:Int,b:Int,c:Int):Int{
+            return ((a*150)+(b*160)+(c*100))
+        }
+       val resulrado= carcularViajes(a,b,c)
+
+        fun showValor(){
+            val tvResultado = findViewById<TextView>(R.id.textView2)
+            tvResultado.setText(resulrado.toString())
+        }
+        showValor()
 
     }
 
-    fun carcularViajes(river:Int,quickwey:Int,canastoga:Int):Int=(river * 150) + (quickwey * 160) + (canastoga * 100)
 
-    fun showValor(){
-        val tvResultado = findViewById<TextView>(R.id.textView2)
-        tvResultado.setText(checkValue().toString())
-    }
+
 
 }
