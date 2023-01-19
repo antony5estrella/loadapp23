@@ -35,23 +35,15 @@ class CalculosActivity : AppCompatActivity() {
             }
         }
 
-        fun checkValueC(): Int {
-            val etNumber3 = findViewById<EditText>(R.id.editTextNumber3)
-            if (etNumber3.text.isNotEmpty()) {
-                return etNumber3.text.toString().toInt()
-            } else {
-                return 0
-            }
-        }
+
 
         val a = checkValueA()
         val b = checkValueB()
-        val c = checkValueC()
 
-        fun carcularViajes(a:Int,b:Int,c:Int):Int{
-            return ((a*150)+(b*160)+(c*100))
+        fun carcularViajes(a:Int,b:Int): Double {
+            return ((a*0.65)+(b*0.25))
         }
-       val resulrado= carcularViajes(a,b,c)
+       val resulrado= carcularViajes(a,b)
 
         fun showValor(){
             val tvResultado = findViewById<TextView>(R.id.textView2)
